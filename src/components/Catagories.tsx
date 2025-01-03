@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "@/components/Button";
 import { BsPhone } from "react-icons/bs";
 import { HiOutlineComputerDesktop } from "react-icons/hi2";
 import { IoWatchOutline } from "react-icons/io5";
@@ -89,11 +88,9 @@ const Catagories = () => {
                 />
               }
               color="w-12 h-6 text-center bg-[#DB4444] rounded-md text-white"
-              discount="-40%"
               img={coat}
               itemName="The north coat"
               itemdisPries="$260"
-              itemPries="$360"
               item="68"
             />
             <Card
@@ -130,9 +127,7 @@ const Catagories = () => {
               img={purs}
               color="w-12 h-6 text-center bg-[#DB4444] rounded-md text-white"
               itemName="Gucci duffle bag"
-              discount="-35%"
               itemdisPries="$920"
-              itemPries="$1160"
               item="28"
             />
 
@@ -152,7 +147,6 @@ const Catagories = () => {
               img={speaker}
               itemName="RGB liquid CPU Cooler"
               itemdisPries="$190"
-              itemPries="$560"
               item="39"
             />
           </div>

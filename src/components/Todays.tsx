@@ -136,8 +136,7 @@ const Todays = () => {
       <div className="px-20 max-w-[1440px] max-lg:w-[848px]">
         <div className="w-[1140px] text-center flex items-center justify-center border-b-2 pb-7 mb-4 max-lg:w-[848px] max-md:w-[572px]">
           <Link href={"/products"}>
-          
-          <Button text="View All Products" />
+            <Button text="View All Products" />
           </Link>
         </div>
       </div>

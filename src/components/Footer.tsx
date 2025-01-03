@@ -6,8 +6,7 @@ import {
   BiLogoFacebook,
   BiLogoInstagram,
   BiLogoTwitter,
-	BiLogoLinkedin,
-  
+  BiLogoLinkedin,
 } from "react-icons/bi";
 import Qr from "@/public/img/Frame 719.png";
 

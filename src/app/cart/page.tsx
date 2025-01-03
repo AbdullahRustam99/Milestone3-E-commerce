@@ -6,15 +6,21 @@ import Footer from "@/components/Footer";
 import Image from "next/image";
 import { MdOutlineDeleteForever } from "react-icons/md";
 import Button from "@/components/Button";
-
+type CartItem = {
+  id: number;
+  title: string;
+  price: number;
+  quantity: number;
+  image: string;
+};
 const Cart = () => {
-  const { cart } = useCart();
-  const { removeFromCart } = useCart();
+  const { cart, removeFromCart } = useCart();
   const [sum, setSum] = useState(0);
 
   useEffect(() => {
     const total = cart.reduce(
-      (acc, item) => Math.round(acc + item.price * item.quantity),
+      (acc: number, item: { price: number; quantity: number }) =>
+        Math.round(acc + item.price * item.quantity),
       0
     );
     setSum(total);
@@ -24,7 +30,7 @@ const Cart = () => {
       <Header />
       <div className="px-2 md:grid md:grid-cols-2 md:p-5 max-w-[1400px]">
         <ul className="flex flex-col gap-4  items-center md:border-r-4">
-          {cart.map((e, index) => {
+          {cart.map((e: CartItem, index: number) => {
             return (
               <li
                 key={index}

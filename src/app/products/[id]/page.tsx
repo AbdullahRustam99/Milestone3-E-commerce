@@ -8,10 +8,19 @@ import { LuRefreshCcw } from "react-icons/lu";
 import Image from "next/image";
 import { useCart } from "@/app/cartContext/createContext";
 
-const Main = ({ params }: { params: { id: string; }; }) => {
-  const {addToCart} = useCart()
+type Product = {
+  id: number;
+  title: string;
+  price: number;
+  image: string;
+  description: string;
+  quantity: number;
+};
+
+const Main = ({ params }: { params: { id: string } }) => {
+  const { addToCart } = useCart();
   const { id } = params;
-  const [products, setproducts] = useState([]);
+  const [products, setproducts] = useState<Product>();
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -26,8 +35,8 @@ const Main = ({ params }: { params: { id: string; }; }) => {
     };
     fetchData();
   }, [id]);
-const [quantity, setquantity] = useState(0)
-
+  const [quantity, setquantity] = useState(0);
+  if (!products) return <div>Loading...</div>;
   return (
     <div>
       <Header />
@@ -74,7 +83,7 @@ const [quantity, setquantity] = useState(0)
               </button>
             </div>
             <button
-              onClick={() => addToCart(products, quantity)}
+              onClick={() => addToCart({ ...products }, quantity)}
               className="bg-[#DB4444] cursor-pointer px-5 py-1 text-white rounded-sm"
             >
               Buy Now

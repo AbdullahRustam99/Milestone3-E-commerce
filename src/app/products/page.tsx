@@ -4,16 +4,26 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { BiHeart, BiShow } from "react-icons/bi";
 import Card from "@/components/Card";
+type Product = {
+  id: number;
+  title: string;
+  price: number;
+  image: string;
+  rating: {
+    rate: number;
+    count: number;
+  };
+};
 
 const Main = () => {
-  const [products, setproducts] = useState([]);
+  const [products, setProducts] = useState<Product[]>([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
         const api = "https://fakestoreapi.com/products";
         const data = await fetch(api);
         const storeData = await data.json();
-        setproducts(storeData);
+        setProducts(storeData);
       } catch (error) {
         console.log("faild to load data", error);
       }
@@ -35,9 +45,9 @@ const Main = () => {
             <div className="flex  justify-center items-center gap-2"></div>
             <div className=" grid md:grid-cols-2 lg:grid-cols-4 lg:grid-rows-5 justify-center items-center gap-5 pb-20">
               {products.map((e) => {
-		      return (
-			      <a key={e.id} href={`/products/${e.id}`}>
-			<Card
+                return (
+                  <a key={e.id} href={`/products/${e.id}`}>
+                    <Card
                       icon2={
                         <BiShow
                           size={37}

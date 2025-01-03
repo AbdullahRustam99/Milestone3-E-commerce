@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { BiChevronRight,BiArrowFromLeft } from "react-icons/bi";
+import { BiChevronRight } from "react-icons/bi";
 import mic from "@/public/img/JBL_BOOMBOX_2_HERO_020_x1 (1) 1.png";
 
 const main = () => {

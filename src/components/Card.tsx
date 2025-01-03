@@ -4,16 +4,17 @@ import React, { ReactNode } from "react";
 import { BiSolidStar } from "react-icons/bi";
 interface PropsType {
   itemName: string;
-  itemdisPries: string;
-  img: StaticImport;
+  itemdisPries: number | string;
+  img: string | StaticImport;
   icon1: ReactNode;
   icon2: ReactNode;
-  item: string
-  color?:string
+  item: number | string;
+  color?: string;
+  discount?: string;
+  itemPries?: string;
 }
 
-const Card = ( props:PropsType ) => {
-
+const Card = (props: PropsType) => {
   return (
     <>
       <div className="max-w-[1440px] ">
@@ -34,7 +35,10 @@ const Card = ( props:PropsType ) => {
           </h1>
           <div className="flex gap-2 items-center">
             <p className="text-red-700">
-              <span className="text-black font-semibold text-[17px]">Price:</span> {props.itemdisPries}
+              <span className="text-black font-semibold text-[17px]">
+                Price:
+              </span>{" "}
+              {props.itemdisPries}
             </p>
           </div>
           <div className="flex gap-2 items-center">

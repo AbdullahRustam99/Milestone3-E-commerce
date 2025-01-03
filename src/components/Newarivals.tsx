@@ -8,7 +8,6 @@ import { CiDeliveryTruck } from "react-icons/ci";
 import { GoShieldCheck } from "react-icons/go";
 import { MdOutlineHeadsetMic } from "react-icons/md";
 
-
 const Newarivals = () => {
   return (
     <>

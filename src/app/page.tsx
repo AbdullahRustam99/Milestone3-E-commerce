@@ -15,7 +15,7 @@ const Main = () => {
       <Todays />
       <Catagories />
       <Products />
-      <Newarivals/>
+      <Newarivals />
       <Footer />
     </div>
   );
