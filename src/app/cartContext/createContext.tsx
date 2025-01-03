@@ -20,9 +20,11 @@ const cartContext = createContext<CartContextType | undefined>(undefined);
 
 const CartProvider = ({ children }: { children: React.ReactNode }) => {
   const [cart, setcart] = useState<CartItem[]>(() => {
-    const savedData = localStorage.getItem("cart");
-    if (savedData) {
-      return JSON.parse(savedData);
+    if (typeof window !== "undefined") {
+      const savedData = localStorage.getItem("cart");
+      if (savedData) {
+        return JSON.parse(savedData);
+      }
     } else {
       return [];
     }
