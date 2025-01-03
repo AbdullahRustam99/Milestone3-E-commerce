@@ -38,7 +38,7 @@ const CartProvider = ({ children }: { children: React.ReactNode }) => {
   }, [cart]);
 
   const addToCart = (product: CartItem, quantity: number) => {
-    //     console.log("Adding to cart", product, quantity);
+   
     setcart((cartitem) => {
       const itemExist = cartitem.find((item) => item.id === product.id);
       console.log(itemExist);

@@ -30,6 +30,12 @@ const Main = () => {
     };
     fetchData();
   }, []);
+   if (!products)
+     return (
+       <div className="text-center w-full h-full flex justify-center items-center">
+         <p className="text-4xl text-[#DB4444]">Loading...</p>
+       </div>
+     );
   return (
     <div>
       <Header />
