@@ -6,7 +6,7 @@ import mic from "@/public/img/JBL_BOOMBOX_2_HERO_020_x1 (1) 1.png";
 const main = () => {
   return (
     <>
-      <div className="max-w-[1440px]">
+      <div className="max-w-[1440px] hidden md:block">
         <div className="w-full flex gap-10 py-12 px-20 justify-between ">
           <div className="border-r-2  pr-4 ">
             <ul className="flex flex-col gap-4">
